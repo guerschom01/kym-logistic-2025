@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KYM Logistic - Solutions Logistiques & Création d'Entreprise</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom CSS */
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        .stats-item {
+            transition: all 0.3s ease;
+        }
+        
+        .stats-item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Header -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="bg-blue-600 text-white p-2 rounded-lg mr-3">
+                    <i class="fas fa-truck text-xl"></i>
+                </div>
+                <h1 class="text-2xl font-bold text-blue-600">KYM <span class="text-gray-800">Logistic</span></h1>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#accueil" class="text-blue-600 font-medium hover:text-blue-800 transition">Accueil</a>
+                <a href="#services" class="text-gray-700 hover:text-blue-600 transition">Services</a>
+                <a href="#apropos" class="text-gray-700 hover:text-blue-600 transition">À propos</a>
+                <a href="#contact" class="text-gray-700 hover:text-blue-600 transition">Contact</a>
+            </nav>
+            
+            <div class="hidden md:block">
+                <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition">Devis Gratuit</a>
+            </div>
+            
+            <button id="mobile-menu-button" class="md:hidden text-gray-700">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white w-full py-4 px-4 shadow-lg">
+            <div class="flex flex-col space-y-4">
+                <a href="#accueil" class="text-blue-600 font-medium">Accueil</a>
+                <a href="#services" class="text-gray-700">Services</a>
+                <a href="#apropos" class="text-gray-700">À propos</a>
+                <a href="#contact" class="text-gray-700">Contact</a>
+                <a href="#contact" class="bg-blue-600 text-white px-6 py-2 rounded-lg font-medium text-center">Devis Gratuit</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero-bg text-white pt-32 pb-20 md:pt-40 md:pb-32">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-12 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Solutions Logistiques Complètes pour Votre Entreprise</h1>
+                <p class="text-xl mb-8 text-gray-200">KYM Logistic vous accompagne dans l'import-export, la gestion logistique et la création d'entreprise avec des solutions sur mesure.</p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium text-center transition">Contactez-nous</a>
+                    <a href="#services" class="bg-white hover:bg-gray-100 text-blue-600 px-8 py-3 rounded-lg font-medium text-center transition">Nos Services</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Logistique" class="rounded-lg shadow-xl w-full max-w-md animate-float">
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-blue-600 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="stats-item p-4 rounded-lg">
+                    <div class="text-4xl font-bold mb-2">5+</div>
+                    <div class="text-gray-200">Années d'expérience</div>
+                </div>
+                <div class="stats-item p-4 rounded-lg">
+                    <div class="text-4xl font-bold mb-2">50+</div>
+                    <div class="text-gray-200">Clients satisfaits</div>
+                </div>
+                <div class="stats-item p-4 rounded-lg">
+                    <div class="text-4xl font-bold mb-2">10+</div>
+                    <div class="text-gray-200">Pays desservis</div>
+                </div>
+                <div class="stats-item p-4 rounded-lg">
+                    <div class="text-4xl font-bold mb-2">24/7</div>
+                    <div class="text-gray-200">Support client</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Nos Services Professionnels</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">KYM Logistic offre une gamme complète de services pour répondre à tous vos besoins en logistique et création d'entreprise.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-8 transition duration-300">
+                    <div class="bg-blue-100 text-blue-600 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-globe text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Import-Export</h3>
+                    <p class="text-gray-600 mb-4">Nous gérons l'ensemble de votre chaîne d'approvisionnement internationale, des formalités douanières à la livraison finale.</p>
+                    <ul class="text-gray-600 space-y-2 mb-6">
+                        <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i> Douanes et réglementations</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i> Transport multimodal</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i> Gestion des risques</li>
+                    </ul>
+                    <a href="#contact" class="text-blue-600 font-medium hover:text-blue-800 transition flex items-center">
+                        En savoir plus <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-8 transition duration-300">
+                    <div class="bg-blue-100 text-blue-600 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-truck-fast text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Logistique Intégrée</h3>
+                    <p class="text-gray-600 mb-4">Solutions logistiques complètes incluant le stockage, la distribution et la gestion des flux pour optimiser vos opérations.</p>
+                    <ul class="text-gray-600 space-y-2 mb-6">
+                        <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i> Entreposage sécurisé</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i> Gestion des stocks</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i> Livraison last-mile</li>
+                    </ul>
+                    <a href="#contact" class="text-blue-600 font-medium hover:text-blue-800 transition flex items-center">
+                        En savoir plus <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-8 transition duration-300">
+                    <div class="bg-blue-100 text-blue-600 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-building text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Création d'Entreprise</h3>
+                    <p class="text-gray-600 mb-4">Accompagnement complet pour la création et le développement de votre entreprise, de l'idée à la réalisation.</p>
+                    <ul class="text-gray-600 space-y-2 mb-6">
+                        <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i> Formalités administratives</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i> Business plan</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i> Recherche de financement</li>
+                    </ul>
+                    <a href="#contact" class="text-blue-600 font-medium hover:text-blue-800 transition flex items-center">
+                        En savoir plus <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-8 transition duration-300">
+                    <div class="bg-blue-100 text-blue-600 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-laptop-code text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Création de Site Web</h3>
+                    <p class="text-gray-600 mb-4">Conception de sites web professionnels adaptés à votre activité pour développer votre présence en ligne.</p>
+                    <ul class="text-gray-600 space-y-2 mb-6">
+                        <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i> Design responsive</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i> Référencement SEO</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i> E-commerce intégré</li>
+                    </ul>
+                    <a href="#contact" class="text-blue-600 font-medium hover:text-blue-800 transition flex items-center">
+                        En savoir plus <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-8 transition duration-300">
+                    <div class="bg-blue-100 text-blue-600 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-boxes-stacked text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Supply Chain Management</h3>
+                    <p class="text-gray-600 mb-4">Optimisation de votre chaîne d'approvisionnement pour réduire les coûts et améliorer l'efficacité opérationnelle.</p>
+                    <ul class="text-gray-600 space-y-2 mb-6">
+                        <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i> Analyse des flux</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i> Réduction des délais</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i> Solutions technologiques</li>
+                    </ul>
+                    <a href="#contact" class="text-blue-600 font-medium hover:text-blue-800 transition flex items-center">
+                        En savoir plus <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card bg-white rounded-xl shadow-lg p-8 transition duration-300">
+                    <div class="bg-blue-100 text-blue-600 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-headset text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Consulting Logistique</h3>
+                    <p class="text-gray-600 mb-4">Expertise et conseils stratégiques pour transformer vos opérations logistiques et gagner en compétitivité.</p>
+                    <ul class="text-gray-600 space-y-2 mb-6">
+                        <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i> Audit logistique</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i> Stratégie d'optimisation</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i> Implémentation de solutions</li>
+                    </ul>
+                    <a href="#contact" class="text-blue-600 font-medium hover:text-blue-800 transition flex items-center">
+                        En savoir plus <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="apropos" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="À propos de KYM Logistic" class="rounded-lg shadow-xl w-full">
+                </div>
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">À propos de KYM Logistic</h2>
+                    <div class="w-20 h-1 bg-blue-600 mb-6"></div>
+                    <p class="text-gray-600 mb-6 text-lg">Fondée par Guerschom Kyundu Mukosa, KYM Logistic s'est imposée comme un acteur innovant dans le domaine de la logistique et de l'import-export en Afrique et dans le monde.</p>
+                    <p class="text-gray-600 mb-8 text-lg">Notre mission est de fournir des solutions logistiques innovantes et sur mesure qui permettent à nos clients de se concentrer sur leur cœur de métier tout en bénéficiant d'une chaîne d'approvisionnement optimisée et fiable.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 text-blue-600 p-3 rounded-full mr-4">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-2">Notre Vision</h4>
+                                <p class="text-gray-600">Devenir le partenaire logistique de référence pour les entrepreneurs africains.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 text-blue-600 p-3 rounded-full mr-4">
+                                <i class="fas fa-hand-holding-heart"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-2">Nos Valeurs</h4>
+                                <p class="text-gray-600">Intégrité, Innovation, Excellence et Engagement client.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium inline-block transition">Contactez le fondateur</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-blue-600 text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Ce que disent nos clients</h2>
+                <div class="w-20 h-1 bg-white mx-auto mb-6"></div>
+                <p class="text-xl text-blue-100 max-w-3xl mx-auto">Découvrez les témoignages de nos clients satisfaits qui ont fait confiance à KYM Logistic pour leurs besoins logistiques.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white bg-opacity-10 p-8 rounded-lg backdrop-filter backdrop-blur-sm">
+                    <div class="flex items-center mb-6">
+                        <div class="text-yellow-400 text-2xl mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-blue-100 mb-6">"KYM Logistic a révolutionné notre chaîne d'approvisionnement. Leur expertise en import-export nous a permis d'étendre nos activités à 5 nouveaux pays en seulement 18 mois."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Jean Dupont</h4>
+                            <p class="text-blue-200 text-sm">CEO, AgroDistri</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white bg-opacity-10 p-8 rounded-lg backdrop-filter backdrop-blur-sm">
+                    <div class="flex items-center mb-6">
+                        <div class="text-yellow-400 text-2xl mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-blue-100 mb-6">"Leur accompagnement pour la création de notre entreprise a été exceptionnel. Nous avons pu lancer notre activité en seulement 3 semaines grâce à leur expertise administrative."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Aïcha Koné</h4>
+                            <p class="text-blue-200 text-sm">Fondatrice, BelleAfrique</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white bg-opacity-10 p-8 rounded-lg backdrop-filter backdrop-blur-sm">
+                    <div class="flex items-center mb-6">
+                        <div class="text-yellow-400 text-2xl mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <p class="text-blue-100 mb-6">"Leur solution de logistique intégrée nous a permis de réduire nos coûts de stockage de 30% tout en améliorant notre taux de livraison à temps. Un partenaire fiable et réactif."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Mohamed Diop</h4>
+                            <p class="text-blue-200 text-sm">Directeur Logistique, TechImport</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Nos Partenaires</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
+                <div class="flex justify-center">
+                    <img src="https://via.placeholder.com/150x80?text=Partner+1" alt="Partenaire" class="h-12 opacity-70 hover:opacity-100 transition">
+                </div>
+                <div class="flex justify-center">
+                    <img src="https://via.placeholder.com/150x80?text=Partner+2" alt="Partenaire" class="h-12 opacity-70 hover:opacity-100 transition">
+                </div>
+                <div class="flex justify-center">
+                    <img src="https://via.placeholder.com/150x80?text=Partner+3" alt="Partenaire" class="h-12 opacity-70 hover:opacity-100 transition">
+                </div>
+                <div class="flex justify-center">
+                    <img src="https://via.placeholder.com/150x80?text=Partner+4" alt="Partenaire" class="h-12 opacity-70 hover:opacity-100 transition">
+                </div>
+                <div class="flex justify-center">
+                    <img src="https://via.placeholder.com/150x80?text=Partner+5" alt="Partenaire" class="h-12 opacity-70 hover:opacity-100 transition">
+                </div>
+                <div class="flex justify-center">
+                    <img src="https://via.placeholder.com/150x80?text=Partner+6" alt="Partenaire" class="h-12 opacity-70 hover:opacity-100 transition">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gray-900 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Prêt à optimiser votre logistique ?</h2>
+            <p class="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">Contactez-nous dès aujourd'hui pour une consultation gratuite et découvrez comment KYM Logistic peut transformer vos opérations logistiques.</p>
+            <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-medium inline-block transition text-lg">Demander un devis</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row">
+                <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Contactez-nous</h2>
+                    <div class="w-20 h-1 bg-blue-600 mb-6"></div>
+                    <p class="text-gray-600 mb-8 text-lg">Notre équipe est à votre disposition pour répondre à toutes vos questions et vous accompagner dans vos projets logistiques.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 text-blue-600 p-3 rounded-full mr-4">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Responsable</h4>
+                                <p class="text-gray-600">Guerschom Kyundu Mukosa</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 text-blue-600 p-3 rounded-full mr-4">
+                                <i class="fas fa-passport"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Nationalité</h4>
+                                <p class="text-gray-600">Congolaise</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 text-blue-600 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Adresse</h4>
+                                <p class="text-gray-600">Turquie (étudiant en Chypre du Nord)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 text-blue-600 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Téléphone</h4>
+                                <p class="text-gray-600">+90 548 826 79 27</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 text-blue-600 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800 mb-1">Email</h4>
+                                <p class="text-gray-600">mukosaguerschom04@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-bold text-gray-800 mb-4">Suivez-nous</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-blue-100 text-blue-600 hover:bg-blue-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="bg-blue-100 text-blue-600 hover:bg-blue-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="bg-blue-100 text-blue-600 hover:bg-blue-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="bg-blue-100 text-blue-600 hover:bg-blue-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-lg">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Envoyez-nous un message</h3>
+                        <form id="contact-form">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <label for="name" class="block text-gray-700 font-medium mb-2">Nom complet</label>
+                                    <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent" required>
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                                    <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent" required>
+                                </div>
+                            </div>
+                            <div class="mb-6">
+                                <label for="subject" class="block text-gray-700 font-medium mb-2">Sujet</label>
+                                <input type="text" id="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent" required>
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                                <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent" required></textarea>
+                            </div>
+                            <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium w-full transition">Envoyer le message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <div class="h-96 w-full">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12523.26371582251!2d32.8534555!3d38.423734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d0843a3c3a4a87%3A0x8dd1a3b5e3a4a87!2sAnkara%2C%20Turquie!5e0!3m2!1sfr!2sfr!4v1620000000000!5m2!1sfr!2sfr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="bg-blue-600 text-white p-2 rounded-lg mr-3">
+                            <i class="fas fa-truck text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">KYM <span class="text-gray-300">Logistic</span></h3>
+                    </div>
+                    <p class="text-gray-400 mb-6">Votre partenaire de confiance pour des solutions logistiques intégrées et innovantes.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Liens rapides</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#accueil" class="text-gray-400 hover:text-white transition">Accueil</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Services</a></li>
+                        <li><a href="#apropos" class="text-gray-400 hover:text-white transition">À propos</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Carrières</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Nos services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Import-Export</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Logistique Intégrée</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Création d'Entreprise</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Création de Site Web</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Supply Chain Management</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Consulting Logistique</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Abonnez-vous à notre newsletter pour recevoir les dernières actualités et offres.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Votre email" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-800 w-full">
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-r-lg transition">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2023 KYM Logistic. Tous droits réservés.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition">Conditions générales</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">Politique de confidentialité</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Back to Top Button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Form Submission
+        const contactForm = document.getElementById('contact-form');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would typically send the data to a server
+            console.log('Form submitted:', { name, email, subject, message });
+            
+            // Show success message
+            alert('Merci pour votre message! Nous vous contacterons bientôt.');
+            
+            // Reset form
+            contactForm.reset();
+        });
+        
+        // Animate elements when they come into view
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.service-card, .stats-item');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Set initial state for animation
+        document.querySelectorAll('.service-card, .stats-item').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'all 0.6s ease';
+        });
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
